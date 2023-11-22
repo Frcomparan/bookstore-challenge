@@ -26,10 +26,14 @@
     <%= form.datetime_field :release_date %>
   </div>
 
-  <div>
-    <%= form.label :category_ids, 'Seleccione categorías para el libro', style: "display: block" %>
-    <%= form.collection_select :category_ids, Category.order(:name), :id, :name,{}, { multiple: true } %>
-  </div>
+  <%= form.fields_for :book_category, book.book_category do |book_category| %>
+    <div>
+      <%= book_category.hidden_field :id %>
+      <%= book_category.check_box :_destroy %> Eliminar
+      <%= book_category.label :category_id, 'Seleccione una categoría para el libro' %>
+      <%= book_category.collection_select :category_id, Category.order(:name), :id, :name %>
+    </div>
+  <% end %>
 
   <div>
     <%= form.submit %>

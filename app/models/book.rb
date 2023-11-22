@@ -16,9 +16,16 @@ class Book < ApplicationRecord
     has_many :book_category, dependent: :destroy
     has_many :categories, through: :book_category
 
-    validate :have_one_category?
+    # Accept attributes to associate book with a categories
+    accepts_nested_attributes_for :book_category, allow_destroy: true
 
-    def have_one_category?
+    # At least one category validation
+    validate :must_have_at_least_one_category
+    
+    def must_have_at_least_one_category
+        deleted_categories_count = book_category.count { |book_cat| book_cat._destroy == true }
+
         errors.add(:categories, "It should have at least one category") if categories.empty?
+        errors.add(:categories, "Can't delete all categories, A book should have at least one category") if deleted_categories_count == book_category.size
     end
 end
