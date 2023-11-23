@@ -1,5 +1,15 @@
 <h1>Loan books</h1>
-
+<div class="dropdown">
+  <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Filter by user
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <%= link_to "All users", loan_books_path, class: "dropdown-item"%>
+    <% @users.each do |user| %>
+      <%= link_to user.email, loan_books_path(user: user.id), class: "dropdown-item" %>
+    <% end %>
+  </div>
+</div>
 <div id="loan_books" class="model-container">
   <% @loan_books.each do |loan_book| %>
     <%= render loan_book %>
