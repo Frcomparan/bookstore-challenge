@@ -6,7 +6,9 @@
       <img src="https://cdn-icons-png.flaticon.com/512/8214/8214212.png">
       <div>
         <h2> <%= user.email %> </h2>
-        <p><strong>By: </strong></p>
+        <% if user.waiting_to_return? %>
+          <span class="badge badge-pill badge-warning">Book pending to return</span>
+        <% end %>
       </div>
     <% end %>
   <% end %>

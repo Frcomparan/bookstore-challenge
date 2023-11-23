@@ -12,6 +12,10 @@
       <strong>Email:</strong>
     </p>
     <h2><%= user.email %></h2>
+
+    <% if user.waiting_to_return? %>
+      <%= link_to "Book pending to return", loan_books_path, class:"badge badge-pill badge-warning" %>
+    <% end %>
   </div>
 
 </div>

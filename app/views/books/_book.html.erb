@@ -1,16 +1,33 @@
-<div id="<%= dom_id book %>">
-  <h2>
-    <%= book.name %>
-  </h2>
+<div id="<%= dom_id book %>" class="model">
+  <figure>
+    <img src="https://static-00.iconduck.com/assets.00/open-book-icon-2048x2048-wuklhx59.png" alt="default-book-icon">
+  </figure>
+  <div class="info">
+    <h2>
+      <%= book.name %>
+    </h2>
 
-  <p>
-    <strong>Author:</strong>
-    <%= book.author %>
-  </p>
+    <p>
+      <strong>Author:</strong>
+      <%= book.author %>
+    </p>
 
-  <p>
-    <strong>Published on:</strong>
-    <%= book.release_date.strftime("%d %B of %Y") %>
-  </p>
+    <p>
+      <strong>Published on:</strong>
+      <%= book.release_date.strftime("%d %B of %Y") %>
+    </p>
+
+    <p>
+      <strong>Categories:</strong>
+      <i>
+        <% book.categories.each do |category| %>
+          <%= category.name %> | 
+        <% end %>
+      </i>
+    </p>
+    <% if book.taken? %>
+      <%= link_to "Taken", loan_books_path, class:"badge badge-pill badge-warning" %>
+    <% end %>
+  </div>
 
 </div>

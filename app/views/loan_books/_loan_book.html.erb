@@ -20,7 +20,7 @@
     </p>
 
     <% if loan_book.return_date.nil? %>
-
+      <span class="badge badge-pill badge-warning">Book pending to return</span>
     <% else %>
       <p>
         <strong>Return date:</strong>

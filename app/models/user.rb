@@ -15,4 +15,8 @@ class User < ApplicationRecord
 
     # Associations
     has_many :loan_books, dependent: :destroy
+
+    def waiting_to_return?
+        User.joins(:loan_books).where(loan_books: { return_date: nil }).include?(self)
+    end
 end

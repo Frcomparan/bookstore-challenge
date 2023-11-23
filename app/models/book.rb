@@ -22,6 +22,10 @@ class Book < ApplicationRecord
 
     # At least one category validation
     validate :must_have_at_least_one_category
+
+    def taken?
+        Book.joins(:loan_books).where(loan_books: { return_date: nil }).include?(self)
+    end
     
     def must_have_at_least_one_category
         deleted_categories_count = book_category.count { |book_cat| book_cat._destroy == true }

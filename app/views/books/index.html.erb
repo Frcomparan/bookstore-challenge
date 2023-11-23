@@ -9,6 +9,9 @@
       <div>
         <h2> <%= book.name %> </h2>
         <p><strong>By: </strong><%= book.author %></p>
+        <% if book.taken? %>
+          <span class="badge badge-pill badge-warning">Taken</span>
+        <% end %>
       </div>
     <% end %>
   <% end %>
