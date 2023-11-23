@@ -6,7 +6,8 @@
   <div id="books" class="model-container">
     <% @books.each do |book| %>
       <%= link_to book, class: "model-item" do %>
-        <%= render book %>
+        <h2> <%= book.name %> </h2>
+        <p><strong>By: </strong><%= book.author %></p>
       <% end %>
     <% end %>
   </div>

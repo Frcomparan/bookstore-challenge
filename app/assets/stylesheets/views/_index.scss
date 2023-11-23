@@ -1,25 +1,26 @@
 .model-item {
-  padding: 10px;
-  color: $black;
-  min-width: 200px;
-  height: 100%;
-  box-shadow: $low-shadow;
-  border-radius: 10px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  text-decoration: none;
+  color: #333;
+  background-color: #fff;
+  transition: box-shadow 0.3s ease-in-out;
+  border-radius: 5px;
 
   h2 {
-    text-align: center;
     font-size: 2rem;
   }
-
 
   &:hover {
     text-decoration: none;
     color: $black;
+    transform: scale(1.01);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 }
 
 .model-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 }
