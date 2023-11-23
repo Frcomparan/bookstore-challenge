@@ -16,7 +16,7 @@
 
     <p>
       <strong>Loan date:</strong>
-      <%= loan_book.loan_date.strftime("%d %B of %Y - %H:%M") %>
+      <%= loan_book.loan_date.strftime("%d of %B, %Y - %H:%M") %>
     </p>
 
     <% if loan_book.return_date.nil? %>
@@ -24,7 +24,7 @@
     <% else %>
       <p>
         <strong>Return date:</strong>
-        <%= loan_book.return_date.strftime("%d %B of %Y - %H:%M" ) %>
+        <%= loan_book.return_date.strftime("%d of %B, %Y - %H:%M" ) %>
       </p>
     <% end %>
 

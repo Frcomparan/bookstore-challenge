@@ -3,7 +3,7 @@ class LoanBooksController < ApplicationController
 
   # GET /loan_books or /loan_books.json
   def index
-    @loan_books = LoanBook.all
+    @pagy, @loan_books = pagy(LoanBook.all)
   end
 
   # GET /loan_books/new

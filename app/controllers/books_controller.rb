@@ -2,9 +2,14 @@ class BooksController < ApplicationController
   before_action :set_book, only: %i[ show edit update destroy ]
   before_action :set_categories, only: %i[ new edit]
 
+  # Pagination
+  include Pagy::Backend
+
+  Pagy::DEFAULT[:items] = 5
+
   # GET /books or /books.json
   def index
-    @books = Book.all
+    @pagy, @books = pagy(Book.all)
   end
 
   # GET /books/1 or /books/1.json
@@ -45,6 +50,7 @@ class BooksController < ApplicationController
         format.html { redirect_to book_url(@book), notice: "Book was successfully updated." }
         format.json { render :show, status: :ok, location: @book }
       else
+        @categories = Category.order(:name)
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @book.errors, status: :unprocessable_entity }
       end
