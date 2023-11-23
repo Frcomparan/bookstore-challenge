@@ -2,9 +2,7 @@
 
 <%= render "form", category: @category %>
 
-<br>
-
-<div>
-  <%= link_to "Show this category", @category %> |
-  <%= link_to "Back to categories", categories_path %>
+<div class="btn-options">
+  <%= link_to "Show this category", @category, class: "btn btn-success" %>
+  <%= link_to "Back to categories", categories_path, class: "btn btn-secondary" %>
 </div>

@@ -2,13 +2,17 @@
 
 <h1>Categories</h1>
 
-<div id="categories">
+<div id="categories" class="model-container">
   <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
+    <%= link_to category, class: "model-item" do %>
+      <figure>
+        <img src="https://cdn.icon-icons.com/icons2/827/PNG/512/stack_icon-icons.com_66542.png" alt="default-category-icon">
+      </figure>
+      <div>
+        <h2> <%= category.name %> </h2>
+      </div>
+    <% end %>
   <% end %>
 </div>
 
-<%= link_to "New category", new_category_path %>
+<%= link_to "New category", new_category_path, class: "btn btn-primary" %>

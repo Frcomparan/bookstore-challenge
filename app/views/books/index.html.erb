@@ -6,10 +6,15 @@
 <div id="books" class="model-container">
   <% @books.each do |book| %>
     <%= link_to book, class: "model-item" do %>
-      <h2> <%= book.name %> </h2>
-      <p><strong>By: </strong><%= book.author %></p>
+      <figure>
+        <img src="https://static-00.iconduck.com/assets.00/open-book-icon-2048x2048-wuklhx59.png">
+      </figure>
+      <div>
+        <h2> <%= book.name %> </h2>
+        <p><strong>By: </strong><%= book.author %></p>
+      </div>
     <% end %>
   <% end %>
 </div>
 
-<%= link_to "New book", new_book_path, class: "btn btn-primary"%>
+<%= link_to "New book", new_book_path, class: "btn btn-primary" %>

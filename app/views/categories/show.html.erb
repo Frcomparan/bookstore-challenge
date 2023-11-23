@@ -2,9 +2,8 @@
 
 <%= render @category %>
 
-<div>
-  <%= link_to "Edit this category", edit_category_path(@category) %> |
-  <%= link_to "Back to categories", categories_path %>
-
-  <%= button_to "Destroy this category", @category, method: :delete %>
+<div class="btn-options">
+  <%= link_to "Edit this category", edit_category_path(@category), class: "btn btn-success" %>
+  <%= button_to "Destroy this category", @category, class: "btn btn-danger", method: :delete %>
+  <%= link_to "Back to categories", categories_path, class: "btn btn-secondary" %>
 </div>

@@ -6,9 +6,30 @@
   background-color: #fff;
   transition: box-shadow 0.3s ease-in-out;
   border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  figure {
+    @include center-grid
+  }
+
+  img {
+    max-height: 100px;
+  }
+
+  & > div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 68%;
+
+    p { margin: 0; }
+  }
 
   h2 {
     font-size: 2rem;
+    margin: 0;
   }
 
   &:hover {
@@ -25,18 +46,13 @@
   gap: 20px;
 }
 
-.user-item {
-  display: flex;
-  gap: 20px;
-
-  img {
-    max-height: 100px;
-    display: inline-block;
-  }
-
-  & > div {
-    display: flex;
+@media only screen and (max-width: 640px) {
+  .model-item {
     justify-content: center;
-    flex-direction: column;
+    text-align: center;
+    
+    & > div {
+      width: auto;
+    }
   }
 }
