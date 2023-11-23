@@ -1,6 +1,6 @@
 # Proyecto de Bookstore Challenge
 
-Este es un proyecto de Rails que realiza la simulación de libreria o biblioteca donde se pueden libros prestados
+Este es un proyecto de Rails que realiza la simulación de una libreria o biblioteca donde se puede realizar el prestamo de libros
 
 ## Demo
 
