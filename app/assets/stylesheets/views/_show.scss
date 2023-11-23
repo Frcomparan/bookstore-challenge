@@ -1,0 +1,14 @@
+.btn-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  .btn, .button_to {
+    flex: 1;
+    min-width: 250px;
+  }
+
+  .btn-danger {
+    width: 100%;
+  }
+}

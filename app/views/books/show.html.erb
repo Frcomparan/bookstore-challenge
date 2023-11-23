@@ -1,10 +1,11 @@
-<p style="color: green"><%= notice %></p>
+<div class="show-container">
+  <p style="color: green"><%= notice %></p>
 
-<%= render @book %>
+  <%= render @book %>
 
-<div>
-  <%= link_to "Edit this book", edit_book_path(@book) %> |
-  <%= link_to "Back to books", books_path %>
-
-  <%= button_to "Destroy this book", @book, method: :delete %>
+  <div class="btn-options">
+    <%= link_to "Edit this book", edit_book_path(@book), class: "btn btn-primary" %>
+    <%= button_to "Destroy this book", @book, class: "btn btn-danger", method: :delete %>
+    <%= link_to "Back to books", books_path, class: "btn btn-secondary" %>
+  </div>
 </div>
