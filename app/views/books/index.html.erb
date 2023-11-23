@@ -1,13 +1,10 @@
-<p style="color: green"><%= notice %></p>
-
-
 <h1>Books</h1>
 
 <div id="books" class="model-container">
   <% @books.each do |book| %>
     <%= link_to book, class: "model-item" do %>
       <figure>
-        <img src="https://static-00.iconduck.com/assets.00/open-book-icon-2048x2048-wuklhx59.png">
+        <img src="https://static-00.iconduck.com/assets.00/open-book-icon-2048x2048-wuklhx59.png" alt="default-book-icon">
       </figure>
       <div>
         <h2> <%= book.name %> </h2>

@@ -34,7 +34,7 @@ class LoanBooksController < ApplicationController
   def update
     respond_to do |format|
       if @loan_book.update(return_date: DateTime.now)
-        format.html { redirect_to loan_book_url(@loan_book), notice: "Loan book was successfully updated." }
+        format.html { redirect_to loan_books_url(), notice: "Loan book was successfully updated." }
         format.json { render :show, status: :ok, location: @loan_book }
       else
         format.html { render :edit, status: :unprocessable_entity }

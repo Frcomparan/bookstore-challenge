@@ -1,12 +1,9 @@
-<p style="color: green"><%= notice %></p>
-
 <h1>Loan books</h1>
 
-<div id="loan_books">
+<div id="loan_books" class="model-container">
   <% @loan_books.each do |loan_book| %>
     <%= render loan_book %>
-
   <% end %>
 </div>
 
-<%= link_to "New loan book", new_loan_book_path %>
+<%= link_to "New loan book", new_loan_book_path, class: "btn btn-primary" %>

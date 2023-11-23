@@ -10,7 +10,7 @@ class Book < ApplicationRecord
     # - Should't have numbers
     validates :name, :author, :release_date, presence: true
     validates :name, :author, format: { with: /\A[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\-\. ]+\Z/,
-    message: "The name doesn't have a valid format, it cannot have numbers" }
+    message: "doesn't have a valid format, it cannot have numbers" }
 
     # Associations
     has_many :book_category, dependent: :destroy
@@ -26,7 +26,7 @@ class Book < ApplicationRecord
     def must_have_at_least_one_category
         deleted_categories_count = book_category.count { |book_cat| book_cat._destroy == true }
 
-        errors.add(:categories, "It should have at least one category") if categories.empty?
-        errors.add(:categories, "Can't delete all categories, A book should have at least one category") if deleted_categories_count == book_category.size
+        errors.add(:category, "must be present, a book must have at least one category") if categories.empty?
+        errors.add(:categories, "can't be deleted, a book must have at least one category") if deleted_categories_count == book_category.size
     end
 end

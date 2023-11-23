@@ -1,27 +1,35 @@
-<div id="<%= dom_id loan_book %>">
-  <p>
-    <strong>Book:</strong>
-    <%= loan_book.book_id %>
-  </p>
+<div id="<%= dom_id loan_book %>" class="model loanbook">
+  <figure>
+    <img src="https://cdn-icons-png.flaticon.com/512/2417/2417791.png" alt="default-loanbook-icon">
+  </figure>
 
-  <p>
-    <strong>User:</strong>
-    <%= loan_book.user_id %>
-  </p>
+  <div class="info loanbook-info">
+    <p>
+      <strong>Book:</strong>
+      <%= loan_book.book.name %>
+    </p>
 
-  <p>
-    <strong>Loan date:</strong>
-    <%= loan_book.loan_date %>
-  </p>
+    <p>
+      <strong>User:</strong>
+      <%= loan_book.user.email %>
+    </p>
 
-  <p>
-    <strong>Return date:</strong>
-    <%= loan_book.return_date %>
-  </p>
+    <p>
+      <strong>Loan date:</strong>
+      <%= loan_book.loan_date.strftime("%d %B of %Y - %H:%M") %>
+    </p>
 
+    <% if loan_book.return_date.nil? %>
+
+    <% else %>
+      <p>
+        <strong>Return date:</strong>
+        <%= loan_book.return_date.strftime("%d %B of %Y - %H:%M" ) %>
+      </p>
+    <% end %>
+
+  </div>
   <% if loan_book.return_date.nil? %>
-    <%= button_to "Mark as return", loan_book, method: :put %>
+    <%= button_to "Mark as return", loan_book, class: "btn btn-success", method: :put %>
   <% end %>
-
-
 </div>

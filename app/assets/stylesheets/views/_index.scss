@@ -56,3 +56,24 @@
     }
   }
 }
+
+.alert p {
+  margin: 0;
+}
+
+
+.loanbook {
+  form {
+    width: auto;
+    display: grid;
+    place-items: center;
+  }
+
+  img {
+    max-height: 150px;
+  }
+
+  .loanbook-info {
+    width: auto;
+  }
+}

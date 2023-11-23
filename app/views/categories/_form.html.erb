@@ -1,6 +1,6 @@
 <%= form_with(model: category, class: 'mt-3') do |form| %>
   <% if category.errors.any? %>
-    <div style="color: red" class="alert alert-danger">
+    <div style="color: red" class="alert alert-danger alert-dismissible">
       <h4><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h4>
 
       <ul>
@@ -8,6 +8,9 @@
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
   <% end %>
 
