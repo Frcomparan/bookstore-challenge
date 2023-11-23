@@ -1,8 +1,7 @@
 <div id="<%= dom_id book %>">
-  <p>
-    <strong>Name:</strong>
+  <h2>
     <%= book.name %>
-  </p>
+  </h2>
 
   <p>
     <strong>Author:</strong>
@@ -10,8 +9,8 @@
   </p>
 
   <p>
-    <strong>Release date:</strong>
-    <%= book.release_date %>
+    <strong>Published on:</strong>
+    <%= book.release_date.strftime("%d %B of %Y") %>
   </p>
 
 </div>
