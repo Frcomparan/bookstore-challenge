@@ -31,7 +31,7 @@
       <%= book_category.hidden_field :id %>
       <%= book_category.check_box :_destroy %> Eliminar
       <%= book_category.label :category_id, 'Seleccione una categoría para el libro' %>
-      <%= book_category.collection_select :category_id, Category.order(:name), :id, :name %>
+      <%= book_category.collection_select :category_id, @categories, :id, :name %>
     </div>
   <% end %>
 

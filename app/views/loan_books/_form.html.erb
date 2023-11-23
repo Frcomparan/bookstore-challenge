@@ -1,0 +1,27 @@
+<%= form_with(model: loan_book) do |form| %>
+  <% if loan_book.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(loan_book.errors.count, "error") %> prohibited this loan_book from being saved:</h2>
+
+      <ul>
+        <% loan_book.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :book_id, 'Seleccione un libro' %>
+    <%= form.collection_select :book_id, @books, :id, :name %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, 'Seleccione un libro' %>
+    <%= form.collection_select :user_id, @users, :id, :email %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

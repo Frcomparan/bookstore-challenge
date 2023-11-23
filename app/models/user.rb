@@ -12,4 +12,7 @@ class User < ApplicationRecord
     validates :name, :email, presence: true
     validates :name, format: { with: /\A[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\-\. ]+\Z/,
     message: "The name doesn't have a valid format, it cannot have numbers" }
+
+    # Associations
+    has_many :loan_books, dependent: :destroy
 end

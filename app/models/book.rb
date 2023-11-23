@@ -15,6 +15,7 @@ class Book < ApplicationRecord
     # Associations
     has_many :book_category, dependent: :destroy
     has_many :categories, through: :book_category
+    has_many :loan_books, dependent: :destroy
 
     # Accept attributes to associate book with a categories
     accepts_nested_attributes_for :book_category, allow_destroy: true

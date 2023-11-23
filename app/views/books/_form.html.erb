@@ -28,7 +28,7 @@
 
   <div>
     <%= form.label :category_ids, 'Seleccione categorías para el libro', style: "display: block" %>
-    <%= form.collection_select :category_ids, Category.order(:name), :id, :name,{}, { multiple: true } %>
+    <%= form.collection_select :category_ids, @categories, :id, :name,{}, { multiple: true } %>
   </div>
 
   <div>

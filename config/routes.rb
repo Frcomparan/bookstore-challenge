@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :loan_books, only: [:index, :new, :create, :update]
   resources :books
   resources :users
   resources :categories
