@@ -24,3 +24,19 @@
   flex-direction: column;
   gap: 20px;
 }
+
+.user-item {
+  display: flex;
+  gap: 20px;
+
+  img {
+    max-height: 100px;
+    display: inline-block;
+  }
+
+  & > div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}

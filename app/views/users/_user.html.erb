@@ -1,12 +1,15 @@
-<div id="<%= dom_id user %>">
-  <p>
-    <strong>Name:</strong>
-    <%= user.name %>
-  </p>
+<div id="<%= dom_id user %>" class="user">
+  <img src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png" alt="default-user-icon">
+  <div class="user-info">
+    <p>
+      <strong>Name:</strong>
+    </p>
+    <h2><%= user.name %></h2>
 
-  <p>
-    <strong>Email:</strong>
-    <%= user.email %>
-  </p>
+    <p>
+      <strong>Email:</strong>
+    </p>
+    <h2><%= user.email %></h2>
+  </div>
 
 </div>

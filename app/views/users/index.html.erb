@@ -2,13 +2,16 @@
 
 <h1>Users</h1>
 
-<div id="users">
+<div id="users" class="model-container ">
   <% @users.each do |user| %>
-    <%= render user %>
-    <p>
-      <%= link_to "Show this user", user %>
-    </p>
+    <%= link_to user, class: "model-item user-item" do %>
+      <img src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png" alt="default-user-icon">
+      <div>
+        <h2> <%= user.email %> </h2>
+        <p><strong>By: </strong></p>
+      </div>
+    <% end %>
   <% end %>
 </div>
 
-<%= link_to "New user", new_user_path %>
+<%= link_to "New user", new_user_path, class: "btn btn-primary" %>

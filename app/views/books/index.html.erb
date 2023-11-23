@@ -1,15 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
 
-  <h1>Books</h1>
+<h1>Books</h1>
 
-  <div id="books" class="model-container">
-    <% @books.each do |book| %>
-      <%= link_to book, class: "model-item" do %>
-        <h2> <%= book.name %> </h2>
-        <p><strong>By: </strong><%= book.author %></p>
-      <% end %>
+<div id="books" class="model-container">
+  <% @books.each do |book| %>
+    <%= link_to book, class: "model-item" do %>
+      <h2> <%= book.name %> </h2>
+      <p><strong>By: </strong><%= book.author %></p>
     <% end %>
-  </div>
+  <% end %>
+</div>
 
-  <%= link_to "New book", new_book_path, class: "btn btn-primary"%>
+<%= link_to "New book", new_book_path, class: "btn btn-primary"%>
