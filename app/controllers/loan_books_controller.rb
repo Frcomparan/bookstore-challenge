@@ -3,7 +3,7 @@ class LoanBooksController < ApplicationController
 
   # GET /loan_books or /loan_books.json
   def index
-    @users = User.joins(:loan_books)
+    @users = User.select(:id, :email).joins(:loan_books).group(:id, :email)
     @user_id = params[:user] if params.key?(:user)
     @loan_books = @user_id ? LoanBook.joins(:user).where(user_id: @user_id) : LoanBook.all
     @pagy, @loan_books = pagy(@loan_books)
