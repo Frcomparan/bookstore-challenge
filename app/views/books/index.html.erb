@@ -1,5 +1,10 @@
 <h1>Books</h1>
 
+<%= link_to new_book_path, class: "btn btn-primary btn-add" do %>
+  <i class="fas fa-plus"></i>
+  <span class="btn-add-text">Add new book</span>
+<% end %>
+
 <div id="books" class="model-container">
   <% @books.each do |book| %>
     <%= link_to book, class: "model-item" do %>
@@ -18,4 +23,3 @@
 </div>
 <%== pagy_nav(@pagy) %>
 
-<%= link_to "New book", new_book_path, class: "btn btn-primary" %>

@@ -3,7 +3,8 @@
   flex-wrap: wrap;
   gap: 10px;
 
-  .btn, .button_to {
+  .btn,
+  .button_to {
     flex: 1;
     min-width: 250px;
   }
@@ -48,7 +49,6 @@
     text-align: center;
     flex-wrap: wrap;
 
-    
     & > div {
       width: auto;
     }

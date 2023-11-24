@@ -1,5 +1,10 @@
 <h1>Categories</h1>
 
+<%= link_to new_category_path, class: "btn btn-primary btn-add" do %>
+  <i class="fas fa-plus"></i>
+  <span class="btn-add-text">Add new category</span>
+<% end %>
+
 <div id="categories" class="model-container">
   <% @categories.each do |category| %>
     <%= link_to category, class: "model-item" do %>
@@ -15,4 +20,3 @@
 
 <%== pagy_nav(@pagy) %>
 
-<%= link_to "New category", new_category_path, class: "btn btn-primary" %>

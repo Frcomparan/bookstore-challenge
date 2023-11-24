@@ -1,5 +1,10 @@
 <h1>Users</h1>
 
+<%= link_to new_user_path, class: "btn btn-primary btn-add" do %>
+  <i class="fas fa-plus"></i>
+  <span class="btn-add-text">Add new user</span>
+<% end %>
+
 <div id="users" class="model-container ">
   <% @users.each do |user| %>
     <%= link_to user, class: "model-item user-item" do %>
@@ -15,4 +20,4 @@
 </div>
 <%== pagy_nav(@pagy) %>
 
-<%= link_to "New user", new_user_path, class: "btn btn-primary" %>
+
